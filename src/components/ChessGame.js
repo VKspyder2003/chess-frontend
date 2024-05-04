@@ -31,10 +31,14 @@ function ChessGame() {
                 let winner = '';
                 if (game.isCheckmate()) {
                     winner = (game.turn() === 'w') ? 'BLACK' : 'WHITE';
-                } else if (game.isStalemate() || game.isDraw() || game.isThreefoldRepetition()) {
-                    winner = 'DRAW';
                 }
                 alert(`Game Over. Winner: ${winner}`);
+                setIsGameStarted(false);
+                return;
+            }
+            if (game.isStalemate() || game.isDraw() || game.isThreefoldRepetition()) {
+                let winner = 'DRAW';
+                alert(`Game Over with a DRAW`);
                 setIsGameStarted(false);
                 return;
             }
@@ -43,13 +47,13 @@ function ChessGame() {
             }
         } catch (error) {
             console.error("Failed to fetch the move: ", error);
+            makeAutoMove();
         }
     };
 
     // Effect to handle automatic moves
     useEffect(() => {
         if (isGameStarted) {
-            makeAutoMove();
             const timer = setInterval(() => {
                 makeAutoMove();
             }, 3000);
