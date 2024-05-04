@@ -14,7 +14,7 @@ function ChessGame() {
     const makeAutoMove = async () => {
         try {
             const model = (game.turn() === 'w') ? whiteModel : blackModel
-            const response = await fetch('http://localhost:5000/move', {
+            const response = await fetch('https://chess-backend-rt09.onrender.com/move', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
