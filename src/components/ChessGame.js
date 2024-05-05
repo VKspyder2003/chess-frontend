@@ -37,7 +37,6 @@ function ChessGame() {
                 return;
             }
             if (game.isStalemate() || game.isDraw() || game.isThreefoldRepetition()) {
-                let winner = 'DRAW';
                 alert(`Game Over with a DRAW`);
                 setIsGameStarted(false);
                 return;
@@ -105,6 +104,8 @@ function ChessGame() {
                     </Select>
                 </span>
             </div>
+
+            <Typography style={{marginTop: '10px', marginBottom: '10px'}}>NOTE: Due to backend being deployed on render, it might take some time to fetch the moves due to down time. Please be patient. Thankyou :)</Typography>
 
             <Button
                 variant="contained"
