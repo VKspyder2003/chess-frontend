@@ -28,7 +28,8 @@ const MODELS = [
     { value: 'gemma-7b-it',            label: 'Gemma 7B IT (Google / OR)',     provider: 'OpenRouter'  },
 ];
 
-const API_URL = 'http://localhost:8000/move';
+// const API_URL = 'http://localhost:8000/move';
+const API_URL = 'https://chess-backend-1-prqv.onrender.com/move';
 
 // Unicode symbols for each piece type, indexed by the piece's own color
 const PIECE_SYMBOLS = {
